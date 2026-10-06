@@ -1,436 +1,924 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>TekVedh | IT Staffing & Recruiting</title>
+<title>TekVedh | IT Staffing & Recruiting</title>
+<meta name="description" content="TekVedh connects organizations with skilled IT professionals across software development, data, cloud, infrastructure and enterprise technologies.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<style>
+:root{
+  --navy:#0b2545;
+  --blue:#1557a0;
+  --bright:#2474d2;
+  --light:#f4f8fc;
+  --text:#172033;
+  --muted:#667085;
+  --white:#ffffff;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #172033;
-      line-height: 1.6;
-      background: #ffffff;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-    nav {
-      background: #ffffff;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:white;
+  line-height:1.6;
+}
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      color: #173f73;
-    }
+.container{
+  width:min(1180px,88%);
+  margin:auto;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
+/* HEADER */
 
-    nav a {
-      text-decoration: none;
-      color: #172033;
-      font-weight: 600;
-    }
+header{
+  background:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 14px rgba(0,0,0,.07);
+}
 
-    nav a:hover {
-      color: #2563a6;
-    }
+nav{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    .hero {
-      min-height: 580px;
-      padding: 100px 8%;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(120deg, #eef5fb, #ffffff);
-    }
+.logo{
+  text-decoration:none;
+  font-size:30px;
+  font-weight:800;
+  color:var(--navy);
+  letter-spacing:-1px;
+}
 
-    .hero-content {
-      max-width: 720px;
-    }
+.logo span{
+  color:var(--bright);
+}
 
-    .hero h1 {
-      font-size: 52px;
-      line-height: 1.1;
-      margin-bottom: 24px;
-      color: #102f55;
-    }
+.nav-links{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
 
-    .hero p {
-      font-size: 19px;
-      margin-bottom: 35px;
-      color: #4b5563;
-    }
+.nav-links a{
+  text-decoration:none;
+  color:#26354a;
+  font-size:14px;
+  font-weight:600;
+}
 
-    .button {
-      display: inline-block;
-      background: #173f73;
-      color: white;
-      padding: 14px 26px;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-right: 12px;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
+.nav-links a:hover{
+  color:var(--bright);
+}
 
-    .button.secondary {
-      background: transparent;
-      color: #173f73;
-      border: 2px solid #173f73;
-    }
+.nav-button{
+  background:var(--navy);
+  color:white!important;
+  padding:11px 18px;
+  border-radius:6px;
+}
 
-    section {
-      padding: 80px 8%;
-    }
+/* HERO */
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
+.hero{
+  background:
+    radial-gradient(circle at 85% 20%,#dbeafe 0,transparent 28%),
+    linear-gradient(120deg,#f4f9ff 0%,#ffffff 60%);
+  padding:105px 0;
+}
 
-    .section-title h2 {
-      font-size: 36px;
-      color: #102f55;
-      margin-bottom: 12px;
-    }
+.hero-inner{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:70px;
+  align-items:center;
+}
 
-    .section-title p {
-      color: #667085;
-      max-width: 750px;
-      margin: auto;
-    }
+.eyebrow{
+  color:var(--blue);
+  text-transform:uppercase;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  margin-bottom:16px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
+.hero h1{
+  font-size:58px;
+  line-height:1.08;
+  letter-spacing:-2px;
+  color:var(--navy);
+  margin-bottom:24px;
+}
 
-    .card {
-      padding: 30px;
-      border-radius: 10px;
-      background: #ffffff;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-    }
+.hero p{
+  font-size:19px;
+  color:#526173;
+  max-width:680px;
+  margin-bottom:34px;
+}
 
-    .card h3 {
-      margin-bottom: 12px;
-      color: #173f73;
-    }
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:14px 24px;
+  border-radius:7px;
+  font-weight:700;
+  margin-right:10px;
+  transition:.2s;
+}
 
-    .expertise {
-      background: #f6f8fb;
-    }
+.btn-primary{
+  background:var(--navy);
+  color:white;
+}
 
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
+.btn-primary:hover{
+  transform:translateY(-2px);
+}
 
-    .expertise-item {
-      background: white;
-      padding: 24px 15px;
-      text-align: center;
-      border-radius: 8px;
-      font-weight: bold;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.06);
-    }
+.btn-outline{
+  color:var(--navy);
+  border:2px solid var(--navy);
+  background:white;
+}
 
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
+.hero-card{
+  background:var(--navy);
+  border-radius:18px;
+  padding:40px;
+  color:white;
+  box-shadow:0 25px 60px rgba(11,37,69,.20);
+}
 
-    .split-box {
-      padding: 45px;
-      border-radius: 12px;
-      background: #eef5fb;
-    }
+.hero-card h3{
+  font-size:25px;
+  margin-bottom:12px;
+}
 
-    .split-box h2 {
-      color: #102f55;
-      margin-bottom: 15px;
-    }
+.hero-card p{
+  color:#dbe8f6;
+  font-size:15px;
+  margin-bottom:25px;
+}
 
-    .split-box p {
-      margin-bottom: 25px;
-    }
+.hero-stat{
+  border-top:1px solid rgba(255,255,255,.15);
+  padding:18px 0;
+}
 
-    .contact {
-      background: #102f55;
-      color: white;
-      text-align: center;
-    }
+.hero-stat strong{
+  display:block;
+  font-size:17px;
+  margin-bottom:3px;
+}
 
-    .contact h2 {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
+.hero-stat span{
+  color:#bcd0e7;
+  font-size:14px;
+}
 
-    .contact p {
-      max-width: 720px;
-      margin: 0 auto 25px;
-    }
+/* GENERAL */
 
-    .contact a {
-      color: white;
-    }
+section{
+  padding:90px 0;
+}
 
-    footer {
-      background: #081d35;
-      color: #d6deea;
-      padding: 35px 8%;
-      text-align: center;
-    }
+.section-heading{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 50px;
+}
 
-    footer strong {
-      color: white;
-    }
+.section-heading small{
+  display:block;
+  color:var(--blue);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  margin-bottom:10px;
+}
 
-    @media (max-width: 900px) {
-      nav ul {
-        display: none;
-      }
+.section-heading h2{
+  color:var(--navy);
+  font-size:40px;
+  line-height:1.2;
+  margin-bottom:15px;
+}
 
-      .hero h1 {
-        font-size: 39px;
-      }
+.section-heading p{
+  color:var(--muted);
+}
 
-      .cards,
-      .expertise-grid,
-      .split {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.about h2{
+  color:var(--navy);
+  font-size:40px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.about p{
+  color:var(--muted);
+  margin-bottom:17px;
+}
+
+.about-panel{
+  background:var(--light);
+  padding:40px;
+  border-radius:14px;
+}
+
+.check{
+  margin:18px 0;
+  font-weight:600;
+}
+
+.check::before{
+  content:"✓";
+  margin-right:12px;
+  color:var(--bright);
+  font-weight:bold;
+}
+
+/* SERVICES */
+
+.services{
+  background:var(--light);
+}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.card{
+  background:white;
+  border-radius:12px;
+  padding:34px;
+  box-shadow:0 7px 25px rgba(15,45,80,.07);
+  border:1px solid #edf1f6;
+}
+
+.number{
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  background:#eaf3ff;
+  color:var(--blue);
+  font-weight:bold;
+  margin-bottom:22px;
+}
+
+.card h3{
+  color:var(--navy);
+  margin-bottom:12px;
+  font-size:21px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:15px;
+}
+
+/* TALENT */
+
+.talent-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.talent-item{
+  border:1px solid #e5eaf0;
+  border-radius:10px;
+  padding:25px 18px;
+  text-align:center;
+  font-weight:700;
+  color:var(--navy);
+  background:white;
+  transition:.2s;
+}
+
+.talent-item:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+/* EMPLOYERS / CANDIDATES */
+
+.audience{
+  background:var(--navy);
+}
+
+.audience-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.audience-box{
+  background:white;
+  border-radius:14px;
+  padding:45px;
+}
+
+.audience-box h2{
+  color:var(--navy);
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.audience-box p{
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+/* WHY */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:35px;
+  text-align:center;
+}
+
+.why-item h3{
+  color:var(--navy);
+  margin:14px 0 8px;
+}
+
+.why-icon{
+  font-size:32px;
+}
+
+/* CONTACT */
+
+.contact{
+  background:#f5f8fc;
+}
+
+.contact-box{
+  max-width:900px;
+  margin:auto;
+  background:white;
+  border-radius:16px;
+  padding:55px;
+  text-align:center;
+  box-shadow:0 10px 35px rgba(0,0,0,.07);
+}
+
+.contact-box h2{
+  font-size:39px;
+  color:var(--navy);
+  margin-bottom:15px;
+}
+
+.contact-box p{
+  color:var(--muted);
+  max-width:700px;
+  margin:0 auto 25px;
+}
+
+.email{
+  display:block;
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:bold;
+  margin-bottom:25px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#061a30;
+  color:#b9c7d7;
+  padding:50px 0 25px;
+}
+
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:35px;
+}
+
+.footer-brand{
+  max-width:450px;
+}
+
+.footer-brand h3{
+  color:white;
+  font-size:27px;
+  margin-bottom:10px;
+}
+
+.footer-links a{
+  display:block;
+  color:#b9c7d7;
+  text-decoration:none;
+  margin-bottom:8px;
+}
+
+.copyright{
+  border-top:1px solid #20364d;
+  padding-top:22px;
+  text-align:center;
+  font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding:75px 0;
+  }
+
+  .hero-inner,
+  .about-grid,
+  .audience-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .card-grid,
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .talent-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-grid{
+    flex-direction:column;
+  }
+}
+
+@media(max-width:550px){
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .talent-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-box{
+    padding:35px 22px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">TekVedh</div>
+<header>
+<nav class="container">
 
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About Us</a></li>
-    <li><a href="#services">Staffing Services</a></li>
-    <li><a href="#talent">IT Talent</a></li>
-    <li><a href="#employers">Employers</a></li>
-    <li><a href="#candidates">Candidates</a></li>
-    <li><a href="#contact">Contact Us</a></li>
-  </ul>
+<a class="logo" href="#home">Tek<span>Vedh</span></a>
+
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#services">Staffing Services</a></li>
+<li><a href="#talent">IT Talent</a></li>
+<li><a href="#employers">Employers</a></li>
+<li><a href="#candidates">Candidates</a></li>
+<li><a class="nav-button" href="#contact">Contact Us</a></li>
+</ul>
+
 </nav>
+</header>
 
+
+<main>
 
 <section class="hero" id="home">
 
-  <div class="hero-content">
+<div class="container hero-inner">
 
-    <h1>Connecting Exceptional IT Talent With Great Opportunities</h1>
+<div>
 
-    <p>
-      TekVedh provides flexible IT staffing and recruiting solutions,
-      connecting businesses with skilled technology professionals across
-      software development, data, cloud, infrastructure, and enterprise technologies.
-    </p>
+<div class="eyebrow">IT Staffing & Recruiting</div>
 
-    <a href="#employers" class="button">Find Talent</a>
+<h1>Connecting Exceptional IT Talent With Great Opportunities</h1>
 
-    <a href="#candidates" class="button secondary">Submit Resume</a>
+<p>
+TekVedh provides flexible IT staffing and recruiting solutions,
+connecting businesses with skilled technology professionals across
+software development, data, cloud, infrastructure and enterprise technologies.
+</p>
 
-  </div>
+<a class="btn btn-primary" href="#employers">Find Talent</a>
+<a class="btn btn-outline" href="#candidates">Submit Resume</a>
 
+</div>
+
+
+<div class="hero-card">
+
+<h3>Technology Talent. Business Results.</h3>
+
+<p>
+Connecting organizations with technology professionals who can
+support projects, teams and long-term business goals.
+</p>
+
+<div class="hero-stat">
+<strong>Flexible Staffing</strong>
+<span>Contract, contract-to-hire and direct hire solutions</span>
+</div>
+
+<div class="hero-stat">
+<strong>Technology Focus</strong>
+<span>Talent across modern IT disciplines</span>
+</div>
+
+<div class="hero-stat">
+<strong>Employer & Candidate Support</strong>
+<span>Focused on creating the right professional connections</span>
+</div>
+
+</div>
+
+</div>
 </section>
 
 
-<section id="about">
+<section class="about" id="about">
 
-  <div class="section-title">
-    <h2>About TekVedh</h2>
+<div class="container about-grid">
 
-    <p>
-      We help organizations connect with qualified technology professionals
-      while helping talented candidates discover opportunities that match
-      their skills and career goals.
-    </p>
-  </div>
+<div>
 
+<div class="eyebrow">About TekVedh</div>
+
+<h2>Connecting technology talent with opportunity.</h2>
+
+<p>
+TekVedh is an IT staffing and recruiting company focused on helping
+organizations identify qualified technology professionals for their
+workforce needs.
+</p>
+
+<p>
+We also work with technology professionals seeking opportunities
+that align with their experience, skills and career goals.
+</p>
+
+</div>
+
+
+<div class="about-panel">
+
+<div class="check">Technology-focused recruiting</div>
+
+<div class="check">Flexible staffing solutions</div>
+
+<div class="check">Qualified IT professionals</div>
+
+<div class="check">Employer and candidate focused</div>
+
+<div class="check">Clear and responsive communication</div>
+
+</div>
+
+</div>
 </section>
 
 
-<section id="services">
+<section class="services" id="services">
 
-  <div class="section-title">
-    <h2>Staffing Solutions</h2>
+<div class="container">
 
-    <p>
-      Flexible recruiting solutions designed around your technology workforce needs.
-    </p>
-  </div>
+<div class="section-heading">
 
-  <div class="cards">
+<small>Staffing Services</small>
 
-    <div class="card">
-      <h3>Contract Staffing</h3>
-      <p>
-        Access experienced IT professionals for project-based and
-        temporary technology requirements.
-      </p>
-    </div>
+<h2>Flexible solutions for your technology workforce</h2>
 
-    <div class="card">
-      <h3>Contract-to-Hire</h3>
-      <p>
-        Evaluate talent in your working environment before making
-        a long-term hiring decision.
-      </p>
-    </div>
+<p>
+Whether you need support for a project or are building your
+long-term technology team, TekVedh can help connect you with talent.
+</p>
 
-    <div class="card">
-      <h3>Direct Hire</h3>
-      <p>
-        Find qualified technology professionals for permanent positions
-        within your organization.
-      </p>
-    </div>
+</div>
 
-  </div>
 
+<div class="card-grid">
+
+<div class="card">
+<div class="number">01</div>
+<h3>Contract Staffing</h3>
+<p>
+Access technology professionals for temporary assignments,
+projects and evolving workforce requirements.
+</p>
+</div>
+
+
+<div class="card">
+<div class="number">02</div>
+<h3>Contract-to-Hire</h3>
+<p>
+Work with a professional in your environment before making
+a longer-term hiring decision.
+</p>
+</div>
+
+
+<div class="card">
+<div class="number">03</div>
+<h3>Direct Hire</h3>
+<p>
+Identify technology professionals for permanent positions
+within your organization.
+</p>
+</div>
+
+</div>
+
+</div>
 </section>
 
 
-<section class="expertise" id="talent">
+<section id="talent">
 
-  <div class="section-title">
-    <h2>Our Talent Expertise</h2>
+<div class="container">
 
-    <p>
-      Connecting employers with professionals across today's most
-      important technology disciplines.
-    </p>
-  </div>
+<div class="section-heading">
 
-  <div class="expertise-grid">
+<small>Talent Expertise</small>
 
-    <div class="expertise-item">Full Stack Development</div>
+<h2>Technology professionals across key IT disciplines</h2>
 
-    <div class="expertise-item">Java Development</div>
+<p>
+TekVedh supports staffing needs across a range of technology
+specialties and enterprise environments.
+</p>
 
-    <div class="expertise-item">Data Engineering & Analytics</div>
+</div>
 
-    <div class="expertise-item">SQL Database Administration</div>
 
-    <div class="expertise-item">ServiceNow</div>
+<div class="talent-grid">
 
-    <div class="expertise-item">Network Engineering</div>
+<div class="talent-item">Full Stack Development</div>
 
-    <div class="expertise-item">QA / SDET</div>
+<div class="talent-item">Java Development</div>
 
-    <div class="expertise-item">DevOps & Cloud</div>
+<div class="talent-item">Data Engineering & Analytics</div>
 
-  </div>
+<div class="talent-item">SQL Database Administration</div>
 
+<div class="talent-item">ServiceNow</div>
+
+<div class="talent-item">Network Engineering</div>
+
+<div class="talent-item">QA / SDET</div>
+
+<div class="talent-item">DevOps & Cloud</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="audience">
+
+<div class="container audience-grid">
+
+
+<div class="audience-box" id="employers">
+
+<div class="eyebrow">For Employers</div>
+
+<h2>Looking for IT talent?</h2>
+
+<p>
+Tell us about your open requirement, technology needs and
+preferred experience. We'll work to connect you with qualified
+professionals who align with the opportunity.
+</p>
+
+<a
+class="btn btn-primary"
+href="mailto:staffing@tekvedh.com?subject=IT Staffing Requirement">
+Find Talent
+</a>
+
+</div>
+
+
+<div class="audience-box" id="candidates">
+
+<div class="eyebrow">For Candidates</div>
+
+<h2>Looking for your next opportunity?</h2>
+
+<p>
+Share your resume and tell us about your technology experience,
+skills and career goals. We welcome conversations with qualified
+IT professionals exploring new opportunities.
+</p>
+
+<a
+class="btn btn-primary"
+href="mailto:staffing@tekvedh.com?subject=Candidate Resume Submission">
+Submit Resume
+</a>
+
+</div>
+
+</div>
 </section>
 
 
 <section>
 
-  <div class="split">
+<div class="container">
 
-    <div class="split-box" id="employers">
+<div class="section-heading">
 
-      <h2>For Employers</h2>
+<small>Why TekVedh</small>
 
-      <p>
-        Looking for skilled IT professionals? TekVedh works with organizations
-        to understand their technical requirements and connect them with
-        qualified candidates.
-      </p>
+<h2>A straightforward approach to IT staffing</h2>
 
-      <a href="mailto:staffing@tekvedh.com?subject=IT Staffing Requirement"
-         class="button">
-         Find Talent
-      </a>
-
-    </div>
+</div>
 
 
-    <div class="split-box" id="candidates">
+<div class="why-grid">
 
-      <h2>For Candidates</h2>
+<div class="why-item">
 
-      <p>
-        Looking for your next technology opportunity? Connect with TekVedh
-        and let us know about your experience, skills, and career goals.
-      </p>
+<div class="why-icon">⌕</div>
 
-      <a href="mailto:staffing@tekvedh.com?subject=Candidate Resume Submission"
-         class="button">
-         Submit Resume
-      </a>
+<h3>Focused Recruiting</h3>
 
-    </div>
+<p>
+We focus on understanding the technical skills and
+requirements behind each opportunity.
+</p>
 
-  </div>
+</div>
 
+
+<div class="why-item">
+
+<div class="why-icon">◇</div>
+
+<h3>Flexible Solutions</h3>
+
+<p>
+Staffing options designed to support temporary,
+project-based and permanent hiring needs.
+</p>
+
+</div>
+
+
+<div class="why-item">
+
+<div class="why-icon">✓</div>
+
+<h3>Professional Communication</h3>
+
+<p>
+Clear communication with employers and candidates throughout
+the recruiting process.
+</p>
+
+</div>
+
+</div>
+
+</div>
 </section>
 
 
 <section class="contact" id="contact">
 
-  <h2>Let's Connect</h2>
+<div class="container">
 
-  <p>
-    Whether you're looking for IT talent, have an open requirement,
-    want to discuss a staffing partnership, or are a technology professional
-    looking for your next opportunity, we'd be happy to hear from you.
-  </p>
+<div class="contact-box">
 
-  <p>
-    <strong>Email:</strong>
-    <a href="mailto:staffing@tekvedh.com">
-      staffing@tekvedh.com
-    </a>
-  </p>
+<div class="eyebrow">Contact TekVedh</div>
 
-  <a href="mailto:staffing@tekvedh.com" class="button">
-    Contact TekVedh
-  </a>
+<h2>Let's Connect</h2>
 
+<p>
+Whether you're looking for IT talent, have an open requirement,
+want to discuss a staffing partnership, or are a technology
+professional looking for your next opportunity, we'd be happy
+to hear from you.
+</p>
+
+<a class="email" href="mailto:staffing@tekvedh.com">
+staffing@tekvedh.com
+</a>
+
+<a class="btn btn-primary"
+href="mailto:staffing@tekvedh.com?subject=TekVedh Inquiry">
+Contact Us
+</a>
+
+</div>
+
+</div>
 </section>
+
+</main>
 
 
 <footer>
 
-  <p>
-    <strong>TekVedh</strong> | IT Staffing & Recruiting
-  </p>
+<div class="container">
 
-  <p>
-    © 2026 TekVedh. All Rights Reserved.
-  </p>
+<div class="footer-grid">
 
+<div class="footer-brand">
+
+<h3>TekVedh</h3>
+
+<p>
+Connecting businesses with skilled technology professionals
+and helping IT talent discover new opportunities.
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<strong style="color:white;">Quick Links</strong>
+
+<a href="#about">About Us</a>
+<a href="#services">Staffing Services</a>
+<a href="#talent">IT Talent</a>
+<a href="#employers">Employers</a>
+<a href="#candidates">Candidates</a>
+<a href="#contact">Contact Us</a>
+
+</div>
+
+
+<div class="footer-links">
+
+<strong style="color:white;">Contact</strong>
+
+<a href="mailto:staffing@tekvedh.com">
+staffing@tekvedh.com
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 TekVedh. All Rights Reserved.
+
+</div>
+
+</div>
 </footer>
 
 </body>
