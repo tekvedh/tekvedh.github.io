@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TekVedh | IT Staffing & Recruiting</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      line-height: 1.6;
+      background: #ffffff;
+    }
+
+    nav {
+      background: #ffffff;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #173f73;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #172033;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2563a6;
+    }
+
+    .hero {
+      min-height: 580px;
+      padding: 100px 8%;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(120deg, #eef5fb, #ffffff);
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: #102f55;
+    }
+
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 35px;
+      color: #4b5563;
+    }
+
+    .button {
+      display: inline-block;
+      background: #173f73;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-right: 12px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: #173f73;
+      border: 2px solid #173f73;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #102f55;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #667085;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 10px;
+      background: #ffffff;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #173f73;
+    }
+
+    .expertise {
+      background: #f6f8fb;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .expertise-item {
+      background: white;
+      padding: 24px 15px;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .split-box {
+      padding: 45px;
+      border-radius: 12px;
+      background: #eef5fb;
+    }
+
+    .split-box h2 {
+      color: #102f55;
+      margin-bottom: 15px;
+    }
+
+    .split-box p {
+      margin-bottom: 25px;
+    }
+
+    .contact {
+      background: #102f55;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      max-width: 720px;
+      margin: 0 auto 25px;
+    }
+
+    .contact a {
+      color: white;
+    }
+
+    footer {
+      background: #081d35;
+      color: #d6deea;
+      padding: 35px 8%;
+      text-align: center;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      .cards,
+      .expertise-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">TekVedh</div>
+
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#services">Staffing Services</a></li>
+    <li><a href="#talent">IT Talent</a></li>
+    <li><a href="#employers">Employers</a></li>
+    <li><a href="#candidates">Candidates</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+</nav>
+
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <h1>Connecting Exceptional IT Talent With Great Opportunities</h1>
+
+    <p>
+      TekVedh provides flexible IT staffing and recruiting solutions,
+      connecting businesses with skilled technology professionals across
+      software development, data, cloud, infrastructure, and enterprise technologies.
+    </p>
+
+    <a href="#employers" class="button">Find Talent</a>
+
+    <a href="#candidates" class="button secondary">Submit Resume</a>
+
+  </div>
+
+</section>
+
+
+<section id="about">
+
+  <div class="section-title">
+    <h2>About TekVedh</h2>
+
+    <p>
+      We help organizations connect with qualified technology professionals
+      while helping talented candidates discover opportunities that match
+      their skills and career goals.
+    </p>
+  </div>
+
+</section>
+
+
+<section id="services">
+
+  <div class="section-title">
+    <h2>Staffing Solutions</h2>
+
+    <p>
+      Flexible recruiting solutions designed around your technology workforce needs.
+    </p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Contract Staffing</h3>
+      <p>
+        Access experienced IT professionals for project-based and
+        temporary technology requirements.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Contract-to-Hire</h3>
+      <p>
+        Evaluate talent in your working environment before making
+        a long-term hiring decision.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Direct Hire</h3>
+      <p>
+        Find qualified technology professionals for permanent positions
+        within your organization.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="expertise" id="talent">
+
+  <div class="section-title">
+    <h2>Our Talent Expertise</h2>
+
+    <p>
+      Connecting employers with professionals across today's most
+      important technology disciplines.
+    </p>
+  </div>
+
+  <div class="expertise-grid">
+
+    <div class="expertise-item">Full Stack Development</div>
+
+    <div class="expertise-item">Java Development</div>
+
+    <div class="expertise-item">Data Engineering & Analytics</div>
+
+    <div class="expertise-item">SQL Database Administration</div>
+
+    <div class="expertise-item">ServiceNow</div>
+
+    <div class="expertise-item">Network Engineering</div>
+
+    <div class="expertise-item">QA / SDET</div>
+
+    <div class="expertise-item">DevOps & Cloud</div>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <div class="split">
+
+    <div class="split-box" id="employers">
+
+      <h2>For Employers</h2>
+
+      <p>
+        Looking for skilled IT professionals? TekVedh works with organizations
+        to understand their technical requirements and connect them with
+        qualified candidates.
+      </p>
+
+      <a href="mailto:staffing@tekvedh.com?subject=IT Staffing Requirement"
+         class="button">
+         Find Talent
+      </a>
+
+    </div>
+
+
+    <div class="split-box" id="candidates">
+
+      <h2>For Candidates</h2>
+
+      <p>
+        Looking for your next technology opportunity? Connect with TekVedh
+        and let us know about your experience, skills, and career goals.
+      </p>
+
+      <a href="mailto:staffing@tekvedh.com?subject=Candidate Resume Submission"
+         class="button">
+         Submit Resume
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+  <h2>Let's Connect</h2>
+
+  <p>
+    Whether you're looking for IT talent, have an open requirement,
+    want to discuss a staffing partnership, or are a technology professional
+    looking for your next opportunity, we'd be happy to hear from you.
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <a href="mailto:staffing@tekvedh.com">
+      staffing@tekvedh.com
+    </a>
+  </p>
+
+  <a href="mailto:staffing@tekvedh.com" class="button">
+    Contact TekVedh
+  </a>
+
+</section>
+
+
+<footer>
+
+  <p>
+    <strong>TekVedh</strong> | IT Staffing & Recruiting
+  </p>
+
+  <p>
+    © 2026 TekVedh. All Rights Reserved.
+  </p>
+
+</footer>
+
+</body>
+</html>
